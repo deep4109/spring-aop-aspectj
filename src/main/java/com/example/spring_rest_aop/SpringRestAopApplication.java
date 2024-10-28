@@ -20,18 +20,18 @@ public class SpringRestAopApplication {
 
     @Bean
     public CommandLineRunner commandLineRunner(AccountDAO theAccountDAO, MembershipDAO theMembershipDAO,
-            TrafficFortuneService theTrafficFortuneService) {
+                                               TrafficFortuneService theTrafficFortuneService) {
 
         return runner -> {
             System.out.println("Hello AOP");
-             //demoTheBeforeAdvice(theAccountDAO, theMembershipDAO);
-             demoTheAfterReturningAdvice(theAccountDAO);
-            // demoTheAfterThrowingAdvice(theAccountDAO);
-            // demoTheAfterAdvice(theAccountDAO);
-            // demoTheAroundAdvice(theTrafficFortuneService);
-            // demoTheAroundAdviceHandleException(theTrafficFortuneService);
+            //demoTheBeforeAdvice(theAccountDAO, theMembershipDAO);
+            //demoTheAfterReturningAdvice(theAccountDAO);
+            //demoTheAfterThrowingAdvice(theAccountDAO);
+            //demoTheAfterAdvice(theAccountDAO); // like finally always will run
+            // demoTheAroundAdvice(theTrafficFortuneService); //before and after the method call
+            //demoTheAroundAdviceHandleException(theTrafficFortuneService);
 
-            //demoTheAroundAdviceRethrowException(theTrafficFortuneService);
+            demoTheAroundAdviceRethrowException(theTrafficFortuneService);
 
         };
     }
